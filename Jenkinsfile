@@ -16,9 +16,9 @@ pipeline {
         }
         stage('Login to Docker Hub') {
             steps {
-                withCredentials([string(credentialsId: 'samin-docker', variable: 'samindocker')]) {
+                 withCredentials([string(credentialsId: 'test-dockerhubpassword', variable: 'test-dockerhubpass')]) {
                     script {
-                        bat "docker login -u adomicarts -p %samindocker%"
+                        bat "docker login -u samadhi05 -p %test-dockerhubpass%"
                     }
                 }
             }
